@@ -1,5 +1,5 @@
 from battlefield import Battlefield
-from robot import Robot
+
 
 
 battlefield_one = Battlefield()
