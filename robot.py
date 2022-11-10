@@ -5,6 +5,8 @@ class Robot:
     def __init__(self) -> None:
         self.name = 'Cyrax'
         self.health = 100
-        self.act_weapon = Weapon()
+        self.active_weapon = Weapon()
         pass
+
+
 
