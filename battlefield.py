@@ -11,23 +11,10 @@ class Battlefield:
         print('\nRound 1!\nFight!\n')
         pass
 
-    def robot_attack(self):
-        self.dinosaur.health -= self.robot.active_weapon.attack_power
-        print(f"{self.robot.name}, dealt {self.robot.active_weapon.attack_power} damage with {self.robot.active_weapon.name}!")
-        print(f"{self.dinosaur.name} has {self.dinosaur.health} health remaining.\n")
-        pass
-            
-    def dinosaur_attack(self):
-        self.robot.health -= self.dinosaur.attack_power
-        print(f"{self.dinosaur.name}'s attack, dealt {self.dinosaur.attack_power} damage!")
-        print(f"{self.robot.name} has {self.robot.health} health remaining.\n")
-        pass
-
     def battle(self):
         while self.robot.health > 0 and self.dinosaur.health > 0:
-            self.robot_attack()
-            if self.dinosaur.health > 0:
-                self.dinosaur_attack()
+            self.robot.attack(self.dinosaur)
+            self.dinosaur.attack(self.robot)
            
     def declare_winner(self):
         if self.robot.health <= 0:
